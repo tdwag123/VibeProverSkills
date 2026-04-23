@@ -1,0 +1,11 @@
+{
+  "name": "lean4-karpathy-claude",
+  "description": "Lean 4 formalization, definition, and proving guidelines with MCP self-check behavior",
+  "version": "1.0.0",
+  "author": {
+    "name": "theom"
+  },
+  "license": "MIT",
+  "keywords": ["lean4", "mathlib", "formalization", "proof", "claude", "guidelines"],
+  "skills": ["./skills/lean4-guidelines"]
+}
