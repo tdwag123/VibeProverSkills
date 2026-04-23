@@ -1,4 +1,4 @@
-# Lean4 Karpathy-Style CLAUDE.md
+# VibeProverSkills
 
 A single `CLAUDE.md` file for Lean 4 formalization, definition design, and theorem proving.
 
@@ -38,8 +38,8 @@ Option A: Plugin marketplace (public distribution)
 From Claude Code:
 
 ```text
-/plugin marketplace add <github-username>/lean4-karpathy-claude
-/plugin install lean4-karpathy-claude@lean4-guidelines
+/plugin marketplace add tdwag123/VibeProverSkills
+/plugin install VibeProverSkills@lean4-guidelines
 ```
 
 Option B: Per-project CLAUDE.md
@@ -77,5 +77,5 @@ MIT
 
 When you update guidance, keep these in sync:
 - `CLAUDE.md` (source of truth)
-- `skills/lean4-guidelines/SKILL.md` (plugin skill payload)
+- `.claude-plugin/skills/lean4-guidelines/SKILL.md` (plugin skill payload)
 - `.claude-plugin/plugin.json` (plugin metadata)

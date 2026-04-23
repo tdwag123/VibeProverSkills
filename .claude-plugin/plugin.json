@@ -1,9 +1,9 @@
 {
-  "name": "lean4-karpathy-claude",
+  "name": "VibeProverSkills",
   "description": "Lean 4 formalization, definition, and proving guidelines with MCP self-check behavior",
   "version": "1.0.0",
   "author": {
-    "name": "theom"
+    "name": "tdwag123"
   },
   "license": "MIT",
   "keywords": ["lean4", "mathlib", "formalization", "proof", "claude", "guidelines"],
