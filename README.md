@@ -1,8 +1,10 @@
 # VibeProverSkills
 
-A single `CLAUDE.md` file for Lean 4 formalization, definition design, and theorem proving.
+Lean 4 formalization, definition design, and theorem proving guidelines for AI coding agents.
 
-`CLAUDE.md` is the source of truth. The plugin skill package mirrors it for public installation.
+Supports both **Claude** (`CLAUDE.md`) and **OpenAI Codex** (`AGENTS.md`). The two files share the same Lean 4 guidelines; only the agent-specific tool-check section differs.
+
+`CLAUDE.md` is the source of truth for Claude. `AGENTS.md` mirrors it for Codex.
 
 ## What CLAUDE.md Covers
 
@@ -33,6 +35,8 @@ These guidelines push the assistant toward small, checkable proof steps.
 
 ## Install
 
+### Claude
+
 Option A: Plugin marketplace (public distribution)
 
 From Claude Code:
@@ -46,14 +50,26 @@ Option B: Per-project CLAUDE.md
 
 Copy this repo's `CLAUDE.md` into your Lean project root (or merge it into your existing one).
 
-## MCP Availability Behavior
+### OpenAI Codex
+
+Copy `AGENTS.md` into your Lean project root (or merge it into your existing one):
+
+```sh
+curl -O https://raw.githubusercontent.com/tdwag123/VibeProverSkills/main/AGENTS.md
+```
+
+Codex reads `AGENTS.md` automatically from the project root, the same way Claude reads `CLAUDE.md`.
+
+## Tool Self-Check Behavior
 
 Default behavior is self-check, not manual flags.
 
-At the start of each Lean task, Claude should state whether Lean MCP is available in this session.
-If available, it should use MCP lookups before guessing symbol names or theorem statements.
+At the start of each Lean task, the agent should state what tools are available (Lean MCP, search, code execution, etc.) and use them before guessing symbol names or theorem statements.
 
-If MCP is unavailable, Claude should state that once and continue with best-effort Lean/Mathlib reasoning.
+If no tools are available, the agent should state that once and continue with best-effort Lean/Mathlib reasoning.
+
+**Claude-specific:** Claude checks for Lean MCP availability and prefers MCP lookups.
+**Codex-specific:** Codex checks for available search/execution tools and uses them equivalently.
 
 ## Example prompt
 
@@ -76,6 +92,7 @@ MIT
 ## For Contributors
 
 When you update guidance, keep these in sync:
-- `CLAUDE.md` (source of truth)
+- `CLAUDE.md` (source of truth for Claude)
+- `AGENTS.md` (mirror for Codex — same Lean guidelines, adapted tool-check section)
 - `.claude-plugin/skills/lean4-guidelines/SKILL.md` (plugin skill payload)
 - `.claude-plugin/plugin.json` (plugin metadata)

@@ -6,6 +6,6 @@
     "name": "tdwag123"
   },
   "license": "MIT",
-  "keywords": ["lean4", "mathlib", "formalization", "proof", "claude", "guidelines"],
+  "keywords": ["lean4", "mathlib", "formalization", "proof", "claude", "codex", "guidelines"],
   "skills": ["./skills/lean4-guidelines"]
 }
