@@ -46,32 +46,32 @@ The model wrote a plausible-looking import that does not exist in Mathlib. The m
 **Before:**
 
 ```lean
-import Mathlib.Topology.MetricSpace.Basic
+import Mathlib.Topology.Metric.Basic
 ```
 
 **After:**
 
 ```lean
-import Mathlib.Topology.EMetricSpace.Basic
+import Mathlib.Topology.MetricSpace.Basic
 ```
 
 ---
 
 ## Hallucinated Lemma Name (Rule 3)
 
-The model invented `MeasureTheory.hausdorffMeasure_ball_eq` from memory. No such lemma exists in Mathlib. The correct name, found via Loogle, is different.
+The model invented `MeasureTheory.hausdorffMeasure_prod` from memory. No such lemma exists in Mathlib. The correct name, found via Loogle, is different.
 
 **Before:**
 
 ```lean
-rw [MeasureTheory.hausdorffMeasure_ball_eq]
+rw MeasureTheory.hausdorffMeasure_prod]
 ```
 
 **After:**
 
 ```lean
 -- Use the Lean MCP to find lemmas
-rw [MeasureTheory.hausdorffMeasure_closedBall]
+rw [MeasureTheory.hausdorffMeasure_prod_real]
 ```
 
 ---
